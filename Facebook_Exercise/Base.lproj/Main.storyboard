@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="LoginViewController" customModule="Facebook_Exercise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" id="yb5-1Y-V5z">
+                                <rect key="frame" x="81" y="67" width="146" height="79"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="vkO-w5-S6U">
+                                <rect key="frame" x="50" y="189" width="216" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="ymQ-m1-Nq2">
+                                        <rect key="frame" x="0.0" y="0.0" width="216" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="onEmailValueChange:" destination="vXZ-lx-hvc" eventType="editingChanged" id="tJy-LE-H6y"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="Be2-dM-WFQ">
+                                        <rect key="frame" x="0.0" y="38" width="216" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="onPasswordValueChange:" destination="vXZ-lx-hvc" eventType="editingChanged" id="B09-gz-e7f"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleAspectFit" id="Efe-aD-7SI">
+                                <rect key="frame" x="50" y="265" width="216" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" id="3JO-Jv-viZ">
+                                        <rect key="frame" x="188" y="17" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iqb-Fu-QN7">
+                                        <rect key="frame" x="-12" y="9" width="240" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="login_button_enabled">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="disabled" image="login_button_disabled"/>
+                                        <connections>
+                                            <action selector="onLoad:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DVF-3b-Zxw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.23137254901960785" green="0.3529411764705882" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="eMB-Xg-QxO" appends="YES" id="VAV-8R-xvd"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextView" destination="ymQ-m1-Nq2" id="qyY-DU-LLw"/>
+                        <outlet property="inputsView" destination="vkO-w5-S6U" id="Hs5-Gv-2yr"/>
+                        <outlet property="loadingView" destination="3JO-Jv-viZ" id="t0e-mM-AbS"/>
+                        <outlet property="loginButton" destination="Efe-aD-7SI" id="1T1-SI-QWI"/>
+                        <outlet property="loginButton2" destination="iqb-Fu-QN7" id="SVu-7Q-e2E"/>
+                        <outlet property="passwordTextView" destination="Be2-dM-WFQ" id="D1p-aY-NjN"/>
+                        <segue destination="5xC-F6-fiX" kind="modal" identifier="Connect" id="ops-9s-IzL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eMB-Xg-QxO">
+                    <connections>
+                        <action selector="onTap:" destination="vXZ-lx-hvc" id="DQm-Ab-3kl"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="69" y="339"/>
+        </scene>
+        <!--Feed View Controller-->
+        <scene sceneID="g8R-T4-so5">
+            <objects>
+                <viewController id="UMM-pD-gPi" customClass="FeedViewController" customModule="Facebook_Exercise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lVn-Wh-qGi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3nq-xU-gVV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_feed" id="bVY-JF-drD">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="0.78823529411764703" green="0.80000000000000004" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="OMc-b5-bXZ">
+                                        <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="color" red="0.24732359870000001" green="0.34514660559999999" blue="0.55731997280000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.71764707569999997" green="0.7254902124" blue="0.73333334920000004" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="p8T-cZ-YQw"/>
+                    <connections>
+                        <outlet property="feedImageView" destination="bVY-JF-drD" id="Ub0-a3-6NP"/>
+                        <outlet property="loadingView" destination="OMc-b5-bXZ" id="cJb-WH-4JQ"/>
+                        <outlet property="scrollView" destination="3nq-xU-gVV" id="VQB-AO-d0h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KSU-eJ-ssE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040" y="339"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QmW-j6-1Hv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="5xC-F6-fiX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="45Q-ox-hqR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UMM-pD-gPi" kind="relationship" relationship="rootViewController" id="n9D-b6-9Sy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZU-Pm-LNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="519" y="339"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home_feed" width="320" height="1025"/>
+        <image name="login_button_disabled" width="293" height="52"/>
+        <image name="login_button_enabled" width="293" height="52"/>
+        <image name="logo" width="174" height="43"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
